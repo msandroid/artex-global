@@ -1,6 +1,6 @@
 # ARTEX detection rules (Sigma / host · log · SIEM)
 
-English · [한국어](README.ko.md)
+English · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 > 한국어: 이 디렉터리는 [방어·탐지 가이드(docs/defense-ko.md)](../../docs/defense-ko.md) 4절
 > "탐지 규칙"의 의사 규칙을 실제로 배포 가능한 [Sigma](https://sigmahq.io) 규칙으로 옮긴 것입니다.

@@ -1,6 +1,6 @@
 # Contributing
 
-[한국어](CONTRIBUTING.md) · English
+[한국어](CONTRIBUTING.md) · English · [日本語](CONTRIBUTING.ja.md)
 
 Thank you for your interest in the global edition of ARTEX (`artex-global`). This document
 gathers the scope, policies, and procedures you should know before you start contributing.

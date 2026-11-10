@@ -1,6 +1,6 @@
 # ARTEX ATT&CK coverage
 
-English · [한국어](README.ko.md)
+English · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 > 한국어: 이 디렉터리는 [`../`](../)의 ARTEX 탐지 규칙(Sigma·Suricata)이 다루는 공격 기법을
 > [MITRE ATT&CK](https://attack.mitre.org/) 전술·기법으로 정리한 **커버리지 레이어**입니다.
