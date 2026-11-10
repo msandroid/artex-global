@@ -1,6 +1,6 @@
 # 스크린샷 안내 (Screenshots)
 
-한국어 · [English below](#english)
+한국어 · [English below](#english) · [日本語](README.ja.md)
 
 이 폴더에는 서로 다른 두 화면 모음이 들어 있습니다. 섞여 보이지 않도록 어느 쪽이
 무엇인지 먼저 밝힙니다.
