@@ -6,7 +6,7 @@
 
 화면과 산출물은 영어가 기본이며, **설정(시스템 → 설정 → 표시 언어)에서 한국어·중국어·스페인어·일본어로도 바꿀 수 있습니다.** 언어를 바꾸면 에이전트가 생성하는 리포트·요약·대화 응답의 언어도 함께 바뀝니다.
 
-한국어 · [中文](README.zh.md) · [English](README.md) · [Español](README.es.md) · [日本語](README.ja.md)
+한국어 · [中文](README.zh.md) · [English](README.en.md) · [Español](README.es.md) · [日本語](README.ja.md)
 
 [![ci](https://github.com/jiwoochris/artex-global/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/ci.yml) [![detections](https://github.com/jiwoochris/artex-global/actions/workflows/detections.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/detections.yml) [![web](https://github.com/jiwoochris/artex-global/actions/workflows/web.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/web.yml) [![license: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 
