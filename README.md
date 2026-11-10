@@ -10,6 +10,8 @@ UI と生成される出力はデフォルトで英語になっており、**設
 
 [![ci](https://github.com/jiwoochris/artex-global/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/ci.yml) [![detections](https://github.com/jiwoochris/artex-global/actions/workflows/detections.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/detections.yml) [![web](https://github.com/jiwoochris/artex-global/actions/workflows/web.yml/badge.svg?branch=main)](https://github.com/jiwoochris/artex-global/actions/workflows/web.yml) [![license: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 
+<img src="docs/assets/architecture-ja.svg" width="900" alt="ARTEX のシステムアーキテクチャ図：Frontend・server・agent・PostgreSQL のデュアルグラフ・補助サブシステム・LLM プロバイダの関係">
+
 </div>
 
 ---
