@@ -1,6 +1,6 @@
 # ARTEX detection rules
 
-English · [한국어](README.ko.md)
+English · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 > 한국어: 이 디렉터리는 [방어·탐지 가이드(docs/defense-ko.md)](../docs/defense-ko.md)의 4절 "탐지 규칙"을
 > 실제로 배포 가능한 [Sigma](https://sigmahq.io) 규칙으로 옮긴 것입니다. 모든 규칙은 자신이 소유하거나 서면

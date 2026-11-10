@@ -1,6 +1,6 @@
 # ARTEX detection rule tests
 
-English · [한국어](README.ko.md)
+English · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 > 한국어: 이 디렉터리는 [`../`](../)의 탐지 규칙이 실제로 발화하는지를 재현 가능하게 증명하는
 > 회귀 테스트입니다. 바이너리 캡처를 저장소에 넣지 않고, 패킷 캡처를 매번 결정론적으로 생성한 뒤

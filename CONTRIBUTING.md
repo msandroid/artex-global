@@ -1,6 +1,6 @@
 # 기여 가이드 (Contributing)
 
-한국어 · [English](CONTRIBUTING.en.md)
+한국어 · [English](CONTRIBUTING.en.md) · [日本語](CONTRIBUTING.ja.md)
 
 ARTEX 글로벌판(`artex-global`)에 관심을 가져 주셔서 고맙습니다. 이 문서는 기여를 시작하기 전에
 알아 두어야 할 범위·방침·절차를 한국어로 정리한 것입니다. 기여를 보내기 전에 반드시

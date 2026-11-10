@@ -1,6 +1,6 @@
 # ARTEX detection rules (Suricata / network)
 
-English · [한국어](README.ko.md)
+English · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 > 한국어: 이 디렉터리는 [방어·탐지 가이드(docs/defense-ko.md)](../../docs/defense-ko.md) 2·4절의
 > 네트워크 관측 지문을 실제로 배포 가능한 [Suricata](https://suricata.io) 규칙으로 옮긴 것입니다.

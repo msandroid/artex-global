@@ -1,6 +1,6 @@
 # 보안 정책 (Security Policy)
 
-한국어 · [English](SECURITY.en.md)
+한국어 · [English](SECURITY.en.md) · [日本語](SECURITY.ja.md)
 
 이 문서는 **ARTEX 글로벌판(`artex-global`) 코드 자체의 보안 취약점**을 어떻게 신고하는지
 설명합니다. ARTEX 는 침투 테스트를 수행하는 공격 보안 도구이지만, 이 문서가 다루는 것은

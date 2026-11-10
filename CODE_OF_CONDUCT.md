@@ -1,6 +1,6 @@
 # 행동 강령 (Code of Conduct)
 
-한국어 · [English](CODE_OF_CONDUCT.en.md)
+한국어 · [English](CODE_OF_CONDUCT.en.md) · [日本語](CODE_OF_CONDUCT.ja.md)
 
 ## 우리의 약속
 

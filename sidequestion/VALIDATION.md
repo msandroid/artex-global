@@ -1,6 +1,6 @@
 # `/btw` 검증 기록
 
-한국어 · [中文](VALIDATION.zh.md)
+한국어 · [中文](VALIDATION.zh.md) · [日本語](VALIDATION.ja.md)
 
 날짜: 2026-09-10. 브랜치: `codex/btw-side-question`. 기준 커밋(baseline): `8dae851b9b622f2ff2631f332fde9719d0b16fba`.
 
