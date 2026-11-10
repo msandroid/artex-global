@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+  <title id="t">ARTEX システムアーキテクチャ</title>
+  <desc id="d">オペレーターのブラウザから Frontend、server、agent を経て、PostgreSQL のデュアルグラフ（資産グラフと探索グラフ）に至る構成。agent は LLM プロバイダを呼び出し、補助サブシステム（記録プロキシ、承認ゲート、エンリッチ、MCP・スキル）を通じて許可された標的にだけツールを実行する。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57606a"/>
+    </marker>
+    <style>
+      text { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans CJK JP", "Yu Gothic", Meiryo, sans-serif; fill: #1f2328; }
+      .h1 { font-size: 24px; font-weight: 700; }
+      .sub { font-size: 14px; fill: #57606a; }
+      .grp { font-size: 14px; font-weight: 700; }
+      .ttl { font-size: 15px; font-weight: 700; }
+      .txt { font-size: 12.5px; fill: #424a53; }
+      .lbl { font-size: 12px; fill: #57606a; }
+      .line { stroke: #57606a; stroke-width: 1.6; fill: none; }
+    </style>
+  </defs>
+
+  <!-- canvas -->
+  <rect x="1" y="1" width="1198" height="798" rx="16" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+  <text x="40" y="46" class="h1">ARTEX システムアーキテクチャ</text>
+  <text x="40" y="70" class="sub">単一の Go バイナリ（Next.js を埋め込み）+ PostgreSQL ／ LLM マルチエージェントによる自律探索</text>
+
+  <!-- operator -->
+  <rect x="40" y="96" width="200" height="70" rx="10" fill="#f6f8fa" stroke="#57606a" stroke-width="1.5"/>
+  <text x="140" y="126" text-anchor="middle" class="ttl">オペレーター</text>
+  <text x="140" y="148" text-anchor="middle" class="txt">ブラウザ · 人の介入</text>
+  <line x1="240" y1="131" x2="298" y2="131" class="line" marker-end="url(#arrow)"/>
+
+  <!-- frontend -->
+  <rect x="300" y="96" width="600" height="70" rx="10" fill="#ddf4ff" stroke="#0969da" stroke-width="1.5"/>
+  <text x="600" y="124" text-anchor="middle" class="ttl">Frontend — Next.js（go:embed で単一バイナリに埋め込み）</text>
+  <text x="600" y="148" text-anchor="middle" class="txt">ダッシュボード · タスク · 資産 · カバレッジグラフ · トラフィック · チャット</text>
+  <line x1="600" y1="166" x2="600" y2="196" class="line" marker-end="url(#arrow)"/>
+  <text x="612" y="186" class="lbl">HTTP / SSE</text>
+
+  <!-- server -->
+  <rect x="300" y="198" width="600" height="112" rx="12" fill="#fff8c5" stroke="#9a6700" stroke-width="1.5"/>
+  <text x="318" y="221" class="grp">server（Go net/http）</text>
+  <rect x="320" y="234" width="180" height="62" rx="8" fill="#ffffff" stroke="#9a6700"/>
+  <text x="410" y="259" text-anchor="middle" class="ttl">REST /api</text>
+  <text x="410" y="280" text-anchor="middle" class="txt">JWT 認証 · SSE</text>
+  <rect x="520" y="234" width="160" height="62" rx="8" fill="#ffffff" stroke="#9a6700"/>
+  <text x="600" y="259" text-anchor="middle" class="ttl">Manager</text>
+  <text x="600" y="280" text-anchor="middle" class="txt">ライフサイクル管理</text>
+  <rect x="700" y="234" width="180" height="62" rx="8" fill="#ffffff" stroke="#9a6700"/>
+  <text x="790" y="259" text-anchor="middle" class="ttl">engine</text>
+  <text x="790" y="280" text-anchor="middle" class="txt">スケジューリングループ</text>
+  <line x1="600" y1="310" x2="600" y2="344" class="line" marker-end="url(#arrow)"/>
+  <text x="612" y="332" class="lbl">intent の割り当て</text>
+
+  <!-- agent -->
+  <rect x="300" y="346" width="600" height="130" rx="12" fill="#fbefff" stroke="#8250df" stroke-width="1.5"/>
+  <text x="318" y="369" class="grp">agent（norma SDK）</text>
+  <rect x="320" y="384" width="130" height="76" rx="8" fill="#ffffff" stroke="#8250df"/>
+  <text x="385" y="408" text-anchor="middle" class="ttl">goals</text>
+  <text x="385" y="428" text-anchor="middle" class="txt">目標分解 +</text>
+  <text x="385" y="446" text-anchor="middle" class="txt">スコープ抽出</text>
+  <rect x="460" y="384" width="130" height="76" rx="8" fill="#ffffff" stroke="#8250df"/>
+  <text x="525" y="408" text-anchor="middle" class="ttl">planner</text>
+  <text x="525" y="428" text-anchor="middle" class="txt">唯一の</text>
+  <text x="525" y="446" text-anchor="middle" class="txt">intent 生成者</text>
+  <rect x="600" y="384" width="130" height="76" rx="8" fill="#ffffff" stroke="#8250df"/>
+  <text x="665" y="408" text-anchor="middle" class="ttl">worker ×N</text>
+  <text x="665" y="428" text-anchor="middle" class="txt">実行役</text>
+  <text x="665" y="446" text-anchor="middle" class="txt">並列にツール実行</text>
+  <rect x="740" y="384" width="140" height="76" rx="8" fill="#ffffff" stroke="#8250df"/>
+  <text x="810" y="408" text-anchor="middle" class="ttl">mainagent</text>
+  <text x="810" y="428" text-anchor="middle" class="txt">human-in-the-loop</text>
+  <text x="810" y="446" text-anchor="middle" class="txt">チャット</text>
+
+  <!-- agent <-> LLM -->
+  <line x1="902" y1="411" x2="948" y2="411" class="line" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="950" y="346" width="210" height="130" rx="12" fill="#ffebe9" stroke="#cf222e" stroke-width="1.5"/>
+  <text x="1055" y="396" text-anchor="middle" class="ttl">LLM プロバイダ</text>
+  <text x="1055" y="420" text-anchor="middle" class="txt">Anthropic</text>
+  <text x="1055" y="440" text-anchor="middle" class="txt">OpenAI 互換エンドポイント</text>
+
+  <!-- agent -> support -->
+  <line x1="298" y1="411" x2="262" y2="411" class="line" marker-end="url(#arrow)"/>
+  <text x="280" y="400" text-anchor="middle" class="lbl">ツール</text>
+
+  <!-- agent -> postgres -->
+  <line x1="600" y1="476" x2="600" y2="518" class="line" marker-end="url(#arrow)"/>
+  <text x="612" y="502" class="lbl">グラフの読み書き</text>
+
+  <!-- postgres -->
+  <rect x="300" y="520" width="600" height="150" rx="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="1.5"/>
+  <text x="318" y="543" class="grp">PostgreSQL — デュアルグラフ</text>
+  <rect x="320" y="558" width="250" height="96" rx="8" fill="#ffffff" stroke="#1a7f37"/>
+  <text x="445" y="584" text-anchor="middle" class="ttl">資産グラフ（グローバル共有）</text>
+  <text x="445" y="608" text-anchor="middle" class="txt">「標的が何であるか」</text>
+  <text x="445" y="630" text-anchor="middle" class="txt">assets · companies · task_scope</text>
+  <rect x="630" y="558" width="250" height="96" rx="8" fill="#ffffff" stroke="#1a7f37"/>
+  <text x="755" y="584" text-anchor="middle" class="ttl">探索グラフ（タスクごと）</text>
+  <text x="755" y="608" text-anchor="middle" class="txt">「どこまでテストしたか」</text>
+  <text x="755" y="630" text-anchor="middle" class="txt">goal · intent · fact · finding · hint</text>
+  <line x1="572" y1="606" x2="628" y2="606" stroke="#1a7f37" stroke-width="1.6" stroke-dasharray="5 4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="600" y="596" text-anchor="middle" class="lbl">anchors</text>
+
+  <!-- support -->
+  <rect x="40" y="346" width="220" height="324" rx="12" fill="#f6f8fa" stroke="#57606a" stroke-width="1.5"/>
+  <text x="58" y="369" class="grp">補助サブシステム</text>
+  <rect x="56" y="384" width="188" height="60" rx="8" fill="#ffffff" stroke="#57606a"/>
+  <text x="150" y="408" text-anchor="middle" class="ttl">MCP · skills</text>
+  <text x="150" y="429" text-anchor="middle" class="txt">memory · report</text>
+  <rect x="56" y="454" width="188" height="60" rx="8" fill="#ffffff" stroke="#57606a"/>
+  <text x="150" y="478" text-anchor="middle" class="ttl">guard / intercept</text>
+  <text x="150" y="499" text-anchor="middle" class="txt">ツール承認ゲート</text>
+  <rect x="56" y="524" width="188" height="60" rx="8" fill="#ffffff" stroke="#57606a"/>
+  <text x="150" y="548" text-anchor="middle" class="ttl">enrich</text>
+  <text x="150" y="569" text-anchor="middle" class="txt">非同期 DNS / HTTP</text>
+  <rect x="56" y="594" width="188" height="60" rx="8" fill="#ffffff" stroke="#57606a"/>
+  <text x="150" y="618" text-anchor="middle" class="ttl">記録プロキシ</text>
+  <text x="150" y="639" text-anchor="middle" class="txt">MITM + CA · 全通信を記録</text>
+
+  <!-- proxy -> target -->
+  <line x1="150" y1="670" x2="150" y2="706" class="line" marker-end="url(#arrow)"/>
+  <rect x="40" y="708" width="220" height="64" rx="10" fill="#ffffff" stroke="#cf222e" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="150" y="734" text-anchor="middle" class="ttl">標的システム</text>
+  <text x="150" y="756" text-anchor="middle" class="txt">許可されたスコープのみ</text>
+
+  <!-- legend -->
+  <text x="300" y="712" class="lbl">planner が探索グラフを読んで intent を発行し、worker がそれを実行して fact / finding を書き戻す閉ループ。</text>
+  <text x="300" y="734" class="lbl">worker 間は実行プロセスを検索・共有し、planner は共有 todolist で多段の攻撃チェーンを順序どおりに進める。</text>
+  <text x="300" y="756" class="lbl">詳細は README の「システムアーキテクチャ」節を参照。</text>
+</svg>
